@@ -1,32 +1,29 @@
 package umc.study.web.dto.store;
 
-import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
-import umc.study.domain.Mission;
-import umc.study.domain.Region;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class StoreRequestDTO {
     @Getter
-    public static class JoinDto{
-        @NotBlank
-        Long id;
+    public static class JoinDto {
         @NotNull
-        String name;
-        @NotNull
-        Long owner_num;
-        @Size(min = 5, max = 12)
-        String address;
-        @Size(min = 5, max = 12)
-        String specAddress;
-        @NotNull
-        private Region region;
+        private Long regionId;
 
-        List<Mission> missionList;
+        @NotNull
+        private String name;
+
+        @NotNull
+        private Long ownerNum;
+
+        @Size(min = 2, max = 12)
+        private String address;
+
+        @Size(min = 2, max = 12)
+        private String specAddress;
     }
 }
+

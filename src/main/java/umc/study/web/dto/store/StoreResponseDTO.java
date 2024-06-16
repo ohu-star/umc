@@ -17,3 +17,4 @@ public class StoreResponseDTO {
         LocalDateTime createdAt;
     }
 }
+

@@ -1,9 +1,7 @@
 package umc.study.converter;
 
-import umc.study.domain.Member;
 import umc.study.domain.Region;
 import umc.study.domain.Store;
-import umc.study.web.dto.member.MemberResponseDTO;
 import umc.study.web.dto.store.StoreRequestDTO;
 import umc.study.web.dto.store.StoreResponseDTO;
 
@@ -15,17 +13,15 @@ public class StoreConverter {
                 .storeId(store.getId())
                 .createdAt(LocalDateTime.now())
                 .build();
-
     }
 
-    public static Store toStore(StoreRequestDTO.JoinDto request){
-
+    public static Store toStore(StoreRequestDTO.JoinDto request, Region region) {
         return Store.builder()
                 .name(request.getName())
-                .owner_num(request.getOwner_num())
+                .owner_num(request.getOwnerNum())
                 .address(request.getAddress())
                 .specAddress(request.getSpecAddress())
-                .region(request.getRegion())
+                .region(region)
                 .build();
     }
 }
