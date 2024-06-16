@@ -1,4 +1,4 @@
-package umc.study.web.dto.member;
+package umc.study.web.dto.memberMission;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-public class MemberResponseDTO {
+public class MemberMissionResponseDTO {
     @Builder
     @Getter
     @NoArgsConstructor
