@@ -3,7 +3,7 @@ package umc.study.domain.mapping;
 import jakarta.persistence.*;
 import lombok.*;
 import umc.study.domain.Food;
-import umc.study.domain.User;
+import umc.study.domain.Member;
 import umc.study.domain.common.BaseEntity;
 
 @Entity
@@ -11,17 +11,28 @@ import umc.study.domain.common.BaseEntity;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class UserPrefer extends BaseEntity {
+public class MemberPrefer extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User user;
+    @JoinColumn(name = "member_id")
+    private Member member;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "food_id")
     private Food food;
+
+    public void setMember(Member member){
+        if(this.member != null)
+            member.getMemberPreferList().remove(this);
+        this.member = member;
+        member.getMemberPreferList().add(this);
+    }
+
+    public void setFood(Food foodCategory){
+        this.food = food;
+    }
 }

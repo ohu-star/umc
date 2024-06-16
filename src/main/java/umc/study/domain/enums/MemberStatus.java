@@ -1,5 +1,5 @@
 package umc.study.domain.enums;
 
-public enum UserStatus {
+public enum MemberStatus {
     ACTIVE, INACTIVE
 }
