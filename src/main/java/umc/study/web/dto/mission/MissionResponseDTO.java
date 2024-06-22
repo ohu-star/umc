@@ -1,4 +1,4 @@
-package umc.study.web.dto.review;
+package umc.study.web.dto.mission;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -6,25 +6,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
-public class ReviewResponseDTO {
+public class MissionResponseDTO {
     @Builder
     @Getter
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class JoinResultDTO {
-        Long reviewId;
-        LocalDateTime createdAt;
-    }
-
-    @Builder
-    @Getter
-    @NoArgsConstructor
-    @AllArgsConstructor
-    public static class ReviewPreViewListDTO{
-        List<ReviewResponseDTO.ReviewPreViewDTO> reviewList;
+    public static class MissionPreViewListDTO{
+        List<MissionPreViewDTO> reviewList;
         Integer listSize;
         Integer totalPage;
         Long totalElements;
@@ -36,11 +26,11 @@ public class ReviewResponseDTO {
     @Getter
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class ReviewPreViewDTO{
-        String ownerNickname;
-        Long storeId;
-        Float score;
+    public static class MissionPreViewDTO{
+        Integer point;
         String detail;
+        LocalDate deadline;
+        Long storeId;
         LocalDate createdAt;
     }
 }
